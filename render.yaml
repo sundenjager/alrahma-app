@@ -7,15 +7,12 @@ services:
   # .NET Backend API
   - type: web
     name: alrahma-backend
-    runtime: docker  # Add this line
+    runtime: docker
     plan: free
     region: oregon
     branch: main
     rootDir: AlRahmaBackend
-    buildCommand: |
-      dotnet restore
-      dotnet publish -c Release -o output
-    startCommand: dotnet output/AlRahmaBackend.dll
+    dockerfilePath: ./Dockerfile
     envVars:
       - key: ASPNETCORE_ENVIRONMENT
         value: Production
@@ -30,7 +27,7 @@ services:
   # React Frontend
   - type: web
     name: alrahma-frontend
-    runtime: static  # Add this line for clarity
+    runtime: static
     plan: free
     branch: main
     rootDir: Al-Rahma-front
