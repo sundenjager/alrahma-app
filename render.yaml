@@ -1,5 +1,5 @@
 services:
-  - type: pgsql
+  - type: postgres
     name: alrahma-database
     plan: free
     ipAllowList: []
