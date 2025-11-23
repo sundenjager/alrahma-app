@@ -4,10 +4,10 @@ databases:
     databaseName: alrahmadb
 
 services:
-  # .NET Backend API
+  # .NET Backend API - FIXED RUNTIME
   - type: web
     name: alrahma-backend
-    env: dotnet
+    runtime: dotnet
     plan: free
     region: oregon
     branch: main
@@ -27,12 +27,11 @@ services:
           property: connectionString
     healthCheckPath: /health
 
-  # React Frontend
+  # React Frontend - FIXED STATIC SITE CONFIG
   - type: web
     name: alrahma-frontend
     env: static
     plan: free
-    region: oregon
     branch: main
     rootDir: Al-Rahma-front
     buildCommand: |
@@ -41,7 +40,4 @@ services:
     staticPublishPath: dist
     envVars:
       - key: VITE_API_BASE_URL
-        fromService:
-          name: alrahma-backend
-          type: web
-          property: url
+        value: https://alrahma-backend.onrender.com
