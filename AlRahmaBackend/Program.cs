@@ -27,23 +27,36 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
 // Database Context
+// Database Context - UPDATED FOR POSTGRESQL
 builder.Services.AddDbContext<ApplicationDbContext>((serviceProvider, options) =>
 {
-    options.UseSqlServer(
-        builder.Configuration.GetConnectionString("DefaultConnection"),
-        sqlOptions =>
+    var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+    
+    if (builder.Environment.IsDevelopment())
+    {
+        // Use SQL Server for development
+        options.UseSqlServer(connectionString, sqlOptions =>
         {
             sqlOptions.EnableRetryOnFailure(
                 maxRetryCount: 5,
-                maxRetryDelay: TimeSpan.FromSeconds(30),
-                errorNumbersToAdd: null);
-        })
-    .EnableDetailedErrors(builder.Environment.IsDevelopment())
-    .EnableSensitiveDataLogging(builder.Environment.IsDevelopment())
-    .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
-
-    options.UseQueryTrackingBehavior(QueryTrackingBehavior.TrackAll);
+                maxRetryDelay: TimeSpan.FromSeconds(30));
+        });
+    }
+    else
+    {
+        // Use PostgreSQL for production (Render)
+        options.UseNpgsql(connectionString, npgsqlOptions =>
+        {
+            npgsqlOptions.EnableRetryOnFailure(
+                maxRetryCount: 3,
+                maxRetryDelay: TimeSpan.FromSeconds(5));
+        });
+    }
+    
+    options.EnableDetailedErrors(builder.Environment.IsDevelopment());
+    options.EnableSensitiveDataLogging(builder.Environment.IsDevelopment());
 });
+
 
 // Add Identity services with enhanced security
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options => 
@@ -73,29 +86,28 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
 // Configure CORS with enhanced security - MUST BE BEFORE AUTHENTICATION
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowSpecificOrigin", policy =>
+    options.AddPolicy("RenderPolicy", policy =>
     {
-        policy.WithOrigins("http://localhost:5173", "http://localhost:5273", "https://localhost:5173")
-              .AllowAnyMethod()
-              .AllowAnyHeader()
-              .AllowCredentials()
-              .WithExposedHeaders("X-Total-Count", "Content-Disposition")
-              .SetPreflightMaxAge(TimeSpan.FromHours(1));
-    });
-    
-    // Add production origins if needed
-    if (builder.Environment.IsProduction())
-    {
-        options.AddPolicy("ProductionCors", policy =>
+        if (builder.Environment.IsDevelopment())
         {
-            policy.WithOrigins("https://yourdomain.com")
+            policy.WithOrigins("http://localhost:5173", "http://localhost:5273")
                   .AllowAnyMethod()
                   .AllowAnyHeader()
-                  .AllowCredentials()
-                  .WithExposedHeaders("X-Total-Count", "Content-Disposition");
-        });
-    }
+                  .AllowCredentials();
+        }
+        else
+        {
+            policy.WithOrigins(
+                    "https://alrahma-frontend.onrender.com",
+                    "https://alrahma-backend.onrender.com"
+                  )
+                  .AllowAnyMethod()
+                  .AllowAnyHeader()
+                  .AllowCredentials();
+        }
+    });
 });
+
 
 // Configure JWT Authentication with legacy token handler for compatibility
 builder.Services.AddAuthentication(options =>
@@ -340,7 +352,7 @@ app.UseHttpsRedirection();
 app.UseRouting();
 
 // CORS MUST COME BEFORE AUTHENTICATION AND AUTHORIZATION
-app.UseCors(app.Environment.IsDevelopment() ? "AllowSpecificOrigin" : "ProductionCors");
+app.UseCors("RenderPolicy");
 
 app.UseAuthentication();
 app.UseAuthorization();

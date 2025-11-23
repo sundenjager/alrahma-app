@@ -2,9 +2,17 @@
 import axios from 'axios';
 
 const getApiBaseUrl = () => {
+  // Use environment variable if set
   if (import.meta.env.VITE_API_BASE_URL) {
     return import.meta.env.VITE_API_BASE_URL;
   }
+  
+  // Auto-detect in production
+  if (window.location.hostname.includes('onrender.com')) {
+    return 'https://alrahma-backend.onrender.com';
+  }
+  
+  // Default to localhost for development
   return 'http://localhost:5273';
 };
 
