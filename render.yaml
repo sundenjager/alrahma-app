@@ -1,10 +1,12 @@
 services:
-  - type: postgres
+  # PostgreSQL Database - CORRECT TYPE
+  - type: pgbundle
     name: alrahma-database
     plan: free
     ipAllowList: []
     databaseName: alrahmadb
 
+  # .NET Backend API
   - type: web
     name: alrahma-backend
     env: dotnet
@@ -23,6 +25,7 @@ services:
         value: 1
     healthCheckPath: /health
 
+  # React Frontend
   - type: static
     name: alrahma-frontend
     plan: free
