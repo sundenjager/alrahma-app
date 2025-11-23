@@ -4,14 +4,14 @@ databases:
     databaseName: alrahmadb
 
 services:
-  # .NET Backend API - Web Service
+  # .NET Backend API
   - type: web
     name: alrahma-backend
     env: dotnet
     plan: free
     region: oregon
     branch: main
-    rootDirectory: AlRahmaBackend
+    rootDir: AlRahmaBackend
     buildCommand: |
       dotnet restore
       dotnet publish -c Release -o output
@@ -27,14 +27,14 @@ services:
           property: connectionString
     healthCheckPath: /health
 
-  # React Frontend - Static Site (CORRECT TYPE)
+  # React Frontend
   - type: web
     name: alrahma-frontend
     env: static
     plan: free
     region: oregon
     branch: main
-    rootDirectory: Al-Rahma-front
+    rootDir: Al-Rahma-front
     buildCommand: |
       npm install
       npm run build
