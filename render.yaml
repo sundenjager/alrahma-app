@@ -1,13 +1,10 @@
 services:
-  # PostgreSQL Database
-  - type: postgres
+  - type: pgsql
     name: alrahma-database
     plan: free
     ipAllowList: []
     databaseName: alrahmadb
-    user: alrahma_user
 
-  # .NET Backend API
   - type: web
     name: alrahma-backend
     env: dotnet
@@ -24,13 +21,8 @@ services:
         value: Production
       - key: DOTNET_CLI_TELEMETRY_OPTOUT
         value: 1
-      - fromDatabase:
-          name: alrahma-database
-          property: connectionString
-          toKey: ConnectionStrings__DefaultConnection
     healthCheckPath: /health
 
-  # React Frontend
   - type: static
     name: alrahma-frontend
     plan: free
@@ -43,7 +35,4 @@ services:
     publishDirectory: dist
     envVars:
       - key: VITE_API_BASE_URL
-        fromService:
-          name: alrahma-backend
-          type: web
-          property: url
+        value: https://alrahma-backend.onrender.com
