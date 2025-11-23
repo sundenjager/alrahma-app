@@ -4,38 +4,28 @@ databases:
     databaseName: alrahmadb
 
 services:
-  # .NET Backend API - REMOVE RUNTIME FIELD
   - type: web
     name: alrahma-backend
     plan: free
-    region: oregon
     branch: main
     rootDir: AlRahmaBackend
-    buildCommand: |
-      dotnet restore
-      dotnet publish -c Release -o output
+    buildCommand: dotnet publish -c Release -o output
     startCommand: dotnet output/AlRahmaBackend.dll
     envVars:
       - key: ASPNETCORE_ENVIRONMENT
         value: Production
-      - key: DOTNET_CLI_TELEMETRY_OPTOUT
-        value: 1
       - key: ConnectionStrings__DefaultConnection
         fromDatabase:
           name: alrahma-database
           property: connectionString
-    healthCheckPath: /health
 
-  # React Frontend
   - type: web
     name: alrahma-frontend
     env: static
     plan: free
     branch: main
     rootDir: Al-Rahma-front
-    buildCommand: |
-      npm install
-      npm run build
+    buildCommand: npm install && npm run build
     staticPublishPath: dist
     envVars:
       - key: VITE_API_BASE_URL
