@@ -1,0 +1,109 @@
+.medical-equipment-container {
+  padding: 20px;
+  max-width: 1400px;
+  padding-bottom: 100px;
+  margin: 50px auto;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+.medical-equipment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.medical-equipment-header h1 {
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.stats-horizontal-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 10px;
+  min-width: 120px;
+  flex: 1;
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #6c757d;
+}
+
+/* Color classes */
+.text-success { color: #28a745; }
+.text-warning { color: #ffc107; }
+.text-danger { color: #dc3545; }
+.text-info { color: #17a2b8; }
+.text-primary { color: #28502d; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .stats-horizontal-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  
+  .stat-item {
+    min-width: 100px;
+    padding: 8px;
+  }
+  
+  .stat-value {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .stats-horizontal-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.nav-tabs {
+  border-bottom: 2px solid #dee2e6 !important;
+}
+
+.nav-tabs .nav-link {
+  border: none !important;
+  color: #6c757d !important;
+  font-weight: 500 !important;
+  padding: 0.75rem 1.5rem !important;
+  transition: all 0.3s ease !important;
+}
+
+.nav-tabs .nav-link:hover {
+  border: none !important;
+  color: #495057 !important;
+}
+
+.nav-tabs .nav-link.active {
+  border: none !important;
+  border-bottom: 3px solid #007bff !important;
+  color: #007bff !important;
+  background: transparent !important;
+}
+
+.categories-manager .table th {
+  background-color: #f8f9fa !important;
+  border-bottom: 2px solid #dee2e6 !important;
+  color: #495057 !important;
+}

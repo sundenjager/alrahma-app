@@ -1,0 +1,57 @@
+.stats-card {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.stat-box {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 6px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.stat-box:hover {
+  transform: translateY(-2px);
+}
+
+.stat-box h6 {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 0.5rem;
+}
+
+.stat-box h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.total-gifts {
+  background-color: #e6f3ff;
+  color: #007bff;
+}
+
+.total-value {
+  background-color: #e6ffed;
+  color: #28a745;
+}
+
+.active-gifts {
+  background-color: #e6fffa;
+  color: #17a2b8;
+}
+
+.inactive-gifts {
+  background-color: #fff3e6;
+  color: #fd7e14;
+}
+
+@media (max-width: 767px) {
+  .stat-box h6 {
+    font-size: 0.8rem;
+  }
+  
+  .stat-box h3 {
+    font-size: 1.2rem;
+  }
+}

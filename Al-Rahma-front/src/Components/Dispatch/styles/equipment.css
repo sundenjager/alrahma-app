@@ -1,0 +1,14 @@
+/* Specific styles for equipment */
+.equipment-badge {
+  font-size: 0.8rem;
+  padding: 0.35em 0.65em;
+}
+
+.equipment-reference {
+  font-weight: 600;
+}
+
+.equipment-model {
+  font-size: 0.85rem;
+  color: #6c757d;
+}

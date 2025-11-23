@@ -1,0 +1,274 @@
+/* ProjectDetailsModal.css */
+.project-details-modal .modal-xl {
+  max-width: 1200px !important;
+}
+
+.project-details-modal .modal-content {
+  border-radius: 12px !important;
+  border: none !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+}
+
+.project-details-modal .modal-header {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+  border-bottom: 2px solid #dee2e6 !important;
+  padding: 1.5rem 2rem !important;
+}
+
+.project-details-modal .modal-title {
+  font-weight: 700 !important;
+  color: #2c3e50 !important;
+  font-size: 1.5rem !important;
+}
+
+.project-details-modal .modal-body {
+  padding: 2rem !important;
+  max-height: 70vh !important;
+  overflow-y: auto !important;
+}
+
+.project-details-modal .modal-footer {
+  border-top: 1px solid #dee2e6 !important;
+  padding: 1rem 2rem !important;
+}
+
+/* Tabs Styling */
+.project-details-modal .nav-tabs {
+  border-bottom: 2px solid #dee2e6 !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.project-details-modal .nav-link {
+  color: #6c757d !important;
+  font-weight: 600 !important;
+  padding: 0.75rem 1.5rem !important;
+  border: none !important;
+  transition: all 0.3s ease !important;
+}
+
+.project-details-modal .nav-link:hover {
+  color: #495057 !important;
+  background-color: #f8f9fa !important;
+}
+
+.project-details-modal .nav-link.active {
+  color: #007bff !important;
+  background-color: transparent !important;
+  border-bottom: 3px solid #007bff !important;
+}
+
+/* List Group Styling */
+.project-details-modal .list-group-item {
+  border: 1px solid #e9ecef !important;
+  padding: 0.75rem 1.25rem !important;
+  font-size: 0.95rem !important;
+}
+
+.project-details-modal .list-group-item strong {
+  color: #2c3e50 !important;
+  min-width: 120px !important;
+  display: inline-block !important;
+}
+
+/* Table Styling */
+.project-details-modal .table {
+  font-size: 0.9rem !important;
+  margin-bottom: 0 !important;
+}
+
+.project-details-modal .table th {
+  background-color: #f8f9fa !important;
+  color: #495057 !important;
+  font-weight: 600 !important;
+  border-bottom: 2px solid #dee2e6 !important;
+  padding: 0.75rem !important;
+}
+
+.project-details-modal .table td {
+  padding: 0.75rem !important;
+  vertical-align: middle !important;
+}
+
+.project-details-modal .table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 123, 255, 0.05) !important;
+}
+
+/* Accordion Styling */
+.project-details-modal .accordion-button {
+  background-color: #f8f9fa !important;
+  color: #2c3e50 !important;
+  font-weight: 600 !important;
+  padding: 1rem 1.25rem !important;
+  border: 1px solid #dee2e6 !important;
+}
+
+.project-details-modal .accordion-button:not(.collapsed) {
+  background-color: #007bff !important;
+  color: white !important;
+  box-shadow: none !important;
+}
+
+.project-details-modal .accordion-button::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%232c3e50'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+}
+
+.project-details-modal .accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+}
+
+.project-details-modal .accordion-body {
+  background-color: #ffffff !important;
+  border: 1px solid #dee2e6 !important;
+  border-top: none !important;
+  padding: 1.5rem !important;
+}
+
+/* Badge Styling */
+.project-details-modal .badge {
+  font-size: 0.75em !important;
+  padding: 0.4em 0.6em !important;
+}
+
+/* Progress Bar Styling */
+.project-details-modal .progress {
+  height: 8px !important;
+  border-radius: 4px !important;
+  background-color: #e9ecef !important;
+}
+
+.project-details-modal .progress-bar {
+  border-radius: 4px !important;
+  font-size: 0.7rem !important;
+  font-weight: 600 !important;
+}
+
+/* Icon Styling */
+.project-details-modal .fa-icon {
+  font-size: 1.1em !important;
+  margin-right: 0.5rem !important;
+}
+
+/* Financial Summary Highlight */
+.project-details-modal .table-primary {
+  background-color: rgba(0, 123, 255, 0.1) !important;
+}
+
+.project-details-modal .table-info {
+  background-color: rgba(23, 162, 184, 0.1) !important;
+}
+
+/* Empty State Styling */
+.project-details-modal .text-muted-center {
+  color: #6c757d !important;
+  text-align: center !important;
+  padding: 3rem 1rem !important;
+}
+
+.project-details-modal .text-muted-center h6 {
+  color: #6c757d !important;
+  margin-top: 1rem !important;
+  font-weight: 500 !important;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .project-details-modal .modal-xl {
+    max-width: 95% !important;
+    margin: 1rem auto !important;
+  }
+  
+  .project-details-modal .modal-body {
+    padding: 1rem !important;
+  }
+  
+  .project-details-modal .nav-link {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-details-modal .modal-header,
+  .project-details-modal .modal-footer {
+    padding: 1rem !important;
+  }
+  
+  .project-details-modal .table {
+    font-size: 0.8rem !important;
+  }
+  
+  .project-details-modal .accordion-button {
+    padding: 0.75rem 1rem !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Scrollbar Styling */
+.project-details-modal .modal-body::-webkit-scrollbar {
+  width: 6px !important;
+}
+
+.project-details-modal .modal-body::-webkit-scrollbar-track {
+  background: #f1f1f1 !important;
+  border-radius: 3px !important;
+}
+
+.project-details-modal .modal-body::-webkit-scrollbar-thumb {
+  background: #c1c1c1 !important;
+  border-radius: 3px !important;
+}
+
+.project-details-modal .modal-body::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8 !important;
+}
+
+/* Hover Effects */
+.project-details-modal .table-hover tbody tr:hover {
+  background-color: rgba(0, 123, 255, 0.1) !important;
+}
+
+.project-details-modal .list-group-item:hover {
+  background-color: #f8f9fa !important;
+}
+
+/* Animation */
+.project-details-modal .accordion-button,
+.project-details-modal .nav-link,
+.project-details-modal .btn {
+  transition: all 0.3s ease !important;
+}
+
+/* Focus States */
+.project-details-modal .btn:focus,
+.project-details-modal .accordion-button:focus,
+.project-details-modal .nav-link:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25) !important;
+}
+
+/* Custom Colors for Different Types */
+.project-details-modal .text-purchase {
+  color: #fd7e14 !important;
+}
+
+.project-details-modal .text-donation {
+  color: #20c997 !important;
+}
+
+.project-details-modal .text-aid {
+  color: #6f42c1 !important;
+}
+
+/* Status Badges */
+.project-details-modal .badge-status-completed {
+  background-color: #28a745 !important;
+}
+
+.project-details-modal .badge-status-inprogress {
+  background-color: #17a2b8 !important;
+}
+
+.project-details-modal .badge-status-pending {
+  background-color: #ffc107 !important;
+  color: #212529 !important;
+}

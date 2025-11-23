@@ -1,0 +1,9 @@
+.pv-container {
+  direction: rtl !important;
+  background-color: #f8f9fa !important;
+  min-height: 100vh !important;
+  width: 100% !important  ;
+  padding: 20px !important;
+  background-color: #f8f9fa;
+  border-radius: 8px !important ;
+}

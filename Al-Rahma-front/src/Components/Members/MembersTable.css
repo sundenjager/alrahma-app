@@ -1,0 +1,200 @@
+/* MembersTable.css - Fixed Horizontal Scrolling */
+.members-table-container {
+  padding: 15px;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 100%;
+  overflow-x: auto; /* Ensure container can scroll */
+}
+
+/* Table responsive behavior */
+.table-responsive {
+  border-radius: 8px;
+  overflow-x: auto !important; /* Force horizontal scrolling */
+  overflow-y: hidden;
+  border: 1px solid #dee2e6;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+/* Ensure table maintains its width */
+.table {
+  width: 100%;
+  min-width: 1200px; /* Minimum width to force scrolling on smaller screens */
+  margin-bottom: 0;
+}
+
+/* Mobile-first responsive table */
+@media (max-width: 768px) {
+  .members-table-container {
+    padding: 10px 5px;
+    overflow-x: auto; /* Mobile scrolling */
+  }
+  
+  /* Make table scroll horizontally on small screens */
+  .table-responsive {
+    border: none;
+    overflow-x: auto !important;
+  }
+  
+  .table {
+    min-width: 800px; /* Smaller min-width for mobile but still scrollable */
+  }
+  
+  /* Keep table layout for horizontal scrolling, not stacked */
+  .table thead {
+    display: table-header-group !important; /* Keep headers visible */
+  }
+  
+  .table tbody, 
+  .table tr {
+    display: table-row !important; /* Keep table structure */
+  }
+  
+  .table td,
+  .table th {
+    display: table-cell !important; /* Keep table cells */
+    white-space: nowrap; /* Prevent text wrapping */
+    min-width: 120px; /* Minimum cell width */
+  }
+  
+  /* Only apply stacked layout for very small screens */
+  @media (max-width: 480px) {
+    .table thead {
+      display: none; /* Hide headers on very small screens */
+    }
+    
+    .table tbody, 
+    .table tr, 
+    .table td {
+      display: block;
+      width: 100%;
+      white-space: normal; /* Allow wrapping in stacked mode */
+    }
+    
+    .table tr {
+      margin-bottom: 15px;
+      border: 1px solid #dee2e6;
+      border-radius: 8px;
+      padding: 10px;
+      background: white;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    
+    .table td {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: right;
+      padding: 8px 10px;
+      border: none;
+      border-bottom: 1px solid #f0f0f0;
+      min-width: auto;
+    }
+    
+    .table td:last-child {
+      border-bottom: none;
+    }
+    
+    /* Add data labels for mobile */
+    .table td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      text-align: left;
+      padding-left: 10px;
+      color: #495057;
+      min-width: 120px;
+    }
+  }
+}
+
+/* Medium screens (tablets) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .table-responsive {
+    font-size: 0.9rem;
+    overflow-x: auto !important;
+  }
+  
+  .table {
+    min-width: 1000px; /* Adjust for tablet screens */
+  }
+  
+  .table th, 
+  .table td {
+    padding: 0.5rem;
+    white-space: nowrap;
+  }
+  
+  .btn-sm {
+    padding: 0.25rem 0.4rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1025px) {
+  .table-responsive {
+    overflow-x: auto !important; /* Still allow scrolling if needed */
+  }
+  
+  .table {
+    min-width: auto; /* Let table determine its width */
+    width: 100%;
+  }
+}
+
+/* Custom styling for member info card */
+.member-info-card {
+  border-left: 4px solid #0d6efd;
+}
+
+/* Form controls */
+.form-control-sm, .form-select-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+}
+
+/* Button hover effects */
+.custom-btn {
+  transition: all 0.2s ease;
+}
+
+.custom-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Highlight the oldest record */
+.table-warning {
+  background-color: rgba(255, 193, 7, 0.1) !important;
+}
+
+/* Disabled state for protected records */
+.protected-record {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.protected-record .btn {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Visual indicator for scrollable tables */
+.table-responsive::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}

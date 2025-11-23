@@ -1,0 +1,138 @@
+/* Main container styling */
+.sessions-history-container {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Back button styling */
+.back-button {
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-weight: 500;
+}
+
+/* Page title styling */
+.page-title {
+  color: #2c3e50;
+  font-weight: 600;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #3498db;
+}
+
+/* Year section styling */
+.year-section {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+.year-header {
+  background-color: #3498db;
+  color: white;
+  cursor: pointer;
+  padding: 15px 20px;
+  border-radius: 10px !important;
+  transition: all 0.3s ease;
+}
+
+.year-header:hover {
+  background-color: #2980b9;
+}
+
+.toggle-icon {
+  transition: transform 0.3s ease;
+}
+
+.toggle-icon.open {
+  transform: rotate(180deg);
+}
+
+/* Session type styling */
+.session-type-section {
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* Table styling */
+.sessions-table {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table-header {
+  background-color: #f1f8ff;
+}
+
+.sessions-table th {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+/* Document link styling */
+.document-link .btn {
+  width: 100%;
+  text-align: right;
+  justify-content: flex-start;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.document-link .btn:hover {
+  background-color: #e3f2fd;
+  transform: translateX(-5px);
+}
+
+/* Detail item styling */
+.detail-item {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  height: 100%;
+}
+
+.detail-label {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+/* Section title styling */
+.section-title {
+  color: #3498db;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 20px;
+}
+
+/* Modal styling */
+.session-details-modal .modal-header {
+  background-color: #3498db;
+  color: white;
+  border-bottom: none;
+}
+
+.session-details-modal .modal-body {
+  padding: 25px;
+}
+
+.session-details-modal .modal-footer {
+  border-top: none;
+  background-color: #f8f9fa;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .detail-item {
+    margin-bottom: 15px;
+  }
+  
+  .sessions-table {
+    font-size: 0.9rem;
+  }
+}

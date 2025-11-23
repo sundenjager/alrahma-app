@@ -1,0 +1,94 @@
+.stats-card {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 24px;
+}
+
+.stats-header {
+  background: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+  padding: 15px;
+}
+
+.stats-header h5 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.stat-box {
+  padding: 15px;
+  border-radius: 6px;
+  text-align: center;
+  background: #f8f9fa;
+  transition: transform 0.2s;
+}
+
+.stat-box:hover {
+  transform: translateY(-2px);
+}
+
+.stat-box h6 {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-box .stat-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.stat-box .stat-subvalue {
+  font-size: 1rem;
+  color: #666;
+  margin: 5px 0 0;
+}
+
+.stat-box.monetary {
+  background: #e6ffed;
+}
+
+.stat-box.in-kind {
+  background: #e6f3ff;
+}
+
+.stat-box.cash-and-in-kind {
+  background: #fff0f5;
+}
+
+.stat-box.valid {
+  background: #d4edda;
+}
+
+.stat-box.invalid {
+  background: #f8d7da;
+}
+
+.stat-box.total-aid {
+  background: #f0f8ff;
+}
+
+@media (max-width: 768px) {
+  .stat-box {
+    padding: 10px;
+  }
+
+  .stat-box h6 {
+    font-size: 0.9rem;
+  }
+
+  .stat-box .stat-value {
+    font-size: 1.2rem;
+  }
+
+  .stat-box .stat-subvalue {
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,80 @@
+.session-container {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.session-card {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.session-header {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+.session-info {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.member-list-container {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.finish-session-card {
+  border-width: 2px;
+}
+
+.notes-textarea {
+  min-height: 120px;
+}
+
+.submit-button {
+  padding: 0.5rem 2rem;
+  font-weight: 500;
+}
+
+.call-button {
+  width: 100%;
+}
+
+.modal-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+.table-header {
+  background-color: #f8f9fa;
+  position: sticky;
+  top: 0;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .print-content, .print-content * {
+    visibility: visible;
+  }
+  .print-content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  .no-print {
+    display: none !important;
+  }
+}

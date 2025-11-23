@@ -1,0 +1,82 @@
+.testament-container {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.page-header {
+  padding-bottom: 15px !important;
+  border-bottom: 1px solid #eee !important;
+}
+
+.page-title {
+  font-weight: 600 !important;
+  color: #333 !important;
+}
+
+.table-responsive {
+  border-radius: 8px !important;
+  overflow: hidden !important;
+}
+
+.table th {
+  background-color: #28502d !important;
+  font-weight: 600 !important;
+  white-space: nowrap !important;
+}
+
+.table td {
+  vertical-align: middle !important;
+}
+
+.badge {
+  font-weight: 500 !important;
+  padding: 5px 10px !important;
+}
+
+.add-modal .modal-dialog {
+  max-width: 800px !important;
+}
+
+.form-control.is-invalid {
+  border-color: #dc3545 !important;
+}
+
+.invalid-feedback {
+  display: block !important;
+  color: #dc3545 !important;
+  font-size: 0.875em !important;
+}
+
+/* Custom button styles */
+.btn-outline-primary {
+  color: #0d6efd !important;
+  border-color: #0d6efd !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: #0d6efd !important;
+  color: white !important;
+}
+
+.btn-outline-danger {
+  color: #dc3545 !important;
+  border-color: #dc3545 !important;
+}
+
+.btn-outline-danger:hover {
+  background-color: #dc3545 !important;
+  color: white !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .table-responsive {
+    overflow-x: auto !important;
+  }
+  
+  .modal-dialog {
+    margin: 0.5rem auto !important;
+  }
+}

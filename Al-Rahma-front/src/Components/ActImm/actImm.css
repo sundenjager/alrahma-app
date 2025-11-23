@@ -1,0 +1,90 @@
+
+/* Main container */
+.actimm-container {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Table styles */
+.actimm-table {
+  margin-top: 20px;
+  background-color: white;
+}
+
+.actimm-table th {
+  background-color: #343a40;
+  color: white;
+  text-align: center;
+}
+
+/* Modal styles */
+.actimm-modal .modal-content {
+  border-radius: 10px;
+}
+
+.actimm-modal .modal-header {
+  background-color: #2c3e50;
+  color: white;
+  border-radius: 10px 10px 0 0;
+}
+
+/* Form styles */
+.actimm-form .form-group {
+  margin-bottom: 15px;
+}
+
+.actimm-form label {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+/* Button styles */
+.btn-submit {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+  background-color: #218838;
+}
+
+/* Filter styles */
+.actimm-filters {
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.actimm-filters .form-group {
+  margin-bottom: 0;
+}
+
+.actimm-filters label {
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .actimm-filters .col-md-2 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 576px) {
+  .actimm-filters .col-md-2 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}

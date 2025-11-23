@@ -1,0 +1,6 @@
+@AlRahmaBackend_HostAddress = http://localhost:5273
+
+GET {{AlRahmaBackend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,527 @@
+/* Main Container */
+.CommiteeSuggestions-component {
+  padding: 24px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Enhanced Filter Card */
+.filter-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 24px;
+  transition: all 0.3s ease;
+}
+
+.filter-card:hover {
+  box-shadow: 0 12px 40px rgba(40, 80, 45, 0.15);
+  transform: translateY(-2px);
+}
+
+.filter-card .card-body {
+  padding: 24px;
+}
+
+/* Search Bar Enhancement */
+.search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #28502d;
+  z-index: 5;
+  font-size: 1.1rem;
+}
+
+.position-relative .form-control {
+  padding-left: 45px;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  height: 50px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #ffffff !important; /* Force white background */
+  color: #000000 !important; /* Force black text */
+}
+
+.position-relative .form-control:focus {
+  border-color: #28502d;
+  box-shadow: 0 0 0 0.2rem rgba(40, 80, 45, 0.25);
+  background-color: #fff;
+  color: #000000;
+}
+
+/* Filter Controls */
+.filter-select, .filter-date {
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  height: 50px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #ffffff 0%, #fafbfc 100%) !important;
+  color: #000000 !important;
+}
+
+.filter-select:focus, .filter-date:focus {
+  border-color: #28502d;
+  box-shadow: 0 0 0 0.2rem rgba(40, 80, 45, 0.25);
+  background-color: #fff;
+  color: #000000;
+}
+
+.filter-select option {
+  padding: 12px;
+  font-size: 1rem;
+  background: white;
+  color: #000000;
+}
+
+/* Form Labels */
+.form-label {
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+/* Advanced Filters Section */
+.advanced-filters {
+  border-top: 2px solid #f1f3f4;
+  padding-top: 20px;
+  animation: slideDown 0.4s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Active Filters Badges */
+.active-filters {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+}
+
+.active-filters h6 {
+  color: #2c3e50;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.active-filters .badge {
+  font-size: 0.85rem;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+}
+
+.active-filters .badge:hover {
+  transform: scale(1.05);
+}
+
+.active-filters .btn-close {
+  padding: 4px;
+  margin-left: 4px;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+}
+
+.active-filters .btn-close:hover {
+  opacity: 1;
+}
+
+/* Button Styles */
+.btn {
+  border-radius: 12px;
+  font-weight: 600;
+  padding: 12px 24px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.btn-outline-primary {
+  color: #28502d;
+  border-color: #28502d;
+  background: transparent;
+}
+
+.btn-outline-primary:hover {
+  background: linear-gradient(135deg, #28502d 0%, #3a7a40 100%);
+  border-color: #28502d;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(40, 80, 45, 0.3);
+}
+
+.btn-outline-danger {
+  color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-outline-danger:hover {
+  background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+  border-color: #dc3545;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(220, 53, 69, 0.3);
+}
+
+/* Table Styles */
+.suggestion-table {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 24px;
+}
+
+.suggestion-table th {
+  background: linear-gradient(135deg, #28502d 0%, #3a7a40 100%);
+  color: white;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 16px 12px;
+  border: none;
+  position: relative;
+}
+
+.suggestion-table th::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  width: 80%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.suggestion-table td {
+  vertical-align: middle;
+  padding: 16px 12px;
+  border-color: #f1f3f4;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  background-color: white;
+  color: #000000;
+}
+
+.suggestion-table tbody tr {
+  transition: all 0.3s ease;
+  background-color: white;
+}
+
+.suggestion-table tbody tr:hover {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  transform: translateX(4px);
+}
+
+.suggestion-table tbody tr:hover td {
+  background: transparent;
+}
+
+/* Committee Badge */
+.committee-badge {
+  background: linear-gradient(135deg, #28502d 0%, #3a7a40 100%);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(40, 80, 45, 0.3);
+}
+
+/* Action Buttons */
+.action-btn {
+  padding: 8px;
+  border: none;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Document Link */
+.document-link {
+  color: #28502d;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  padding: 8px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.document-link:hover {
+  color: #3a7a40;
+  background: rgba(40, 80, 45, 0.1);
+  transform: scale(1.1);
+}
+
+/* Pagination Styles */
+.pagination-container {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 24px;
+}
+
+.pagination {
+  margin-bottom: 0;
+}
+
+.pagination .page-item .page-link {
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  margin: 0 4px;
+  color: #28502d;
+  font-weight: 600;
+  padding: 10px 16px;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.pagination .page-item .page-link:hover {
+  background: linear-gradient(135deg, #28502d 0%, #3a7a40 100%);
+  color: white;
+  border-color: #28502d;
+  transform: translateY(-2px);
+}
+
+.pagination .page-item.active .page-link {
+  background: linear-gradient(135deg, #28502d 0%, #3a7a40 100%);
+  border-color: #28502d;
+  color: white;
+  box-shadow: 0 4px 12px rgba(40, 80, 45, 0.4);
+}
+
+/* Loading Overlay */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loading-overlay .spinner-border {
+  width: 3rem;
+  height: 3rem;
+  color: #28502d;
+}
+
+/* Alert Styles */
+.alert {
+  border: none;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.alert-info {
+  background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%);
+  color: #0c5460;
+  border-left: 4px solid #0c5460;
+}
+
+.alert-danger {
+  background: linear-gradient(135deg, #f8d7da 0%, #f1b0b7 100%);
+  color: #721c24;
+  border-left: 4px solid #dc3545;
+}
+
+/* Data Counter */
+.data-counter {
+  background: linear-gradient(135deg, #28502d 0%, #3a7a40 100%);
+  color: white;
+  padding: 16px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(40, 80, 45, 0.3);
+}
+
+.data-counter .count {
+  font-size: 2rem;
+  font-weight: 700;
+  display: block;
+  line-height: 1;
+}
+
+.data-counter .label {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-top: 4px;
+}
+
+/* Results Summary */
+.text-muted.small {
+  color: #6c757d !important;
+  font-weight: 500;
+}
+
+/* Add Button Enhancement */
+.add-button-container {
+  margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .CommiteeSuggestions-component {
+    padding: 16px;
+  }
+  
+  .filter-card .card-body {
+    padding: 16px;
+  }
+  
+  .suggestion-table {
+    font-size: 0.9rem;
+  }
+  
+  .suggestion-table th,
+  .suggestion-table td {
+    padding: 12px 8px;
+  }
+  
+  .pagination .page-item .page-link {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+  
+  .btn {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+  
+  .advanced-filters .row {
+    gap: 12px;
+  }
+  
+  .data-counter {
+    padding: 12px;
+  }
+  
+  .data-counter .count {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .CommiteeSuggestions-component {
+    padding: 12px;
+  }
+  
+  .filter-card .card-body {
+    padding: 12px;
+  }
+  
+  .suggestion-table {
+    display: block;
+    overflow-x: auto;
+  }
+  
+  .pagination-container {
+    padding: 16px;
+  }
+  
+  .pagination {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .pagination .page-item {
+    margin-bottom: 4px;
+  }
+}
+
+/* REMOVE OR COMMENT OUT THE DARK MODE SECTION */
+/*
+@media (prefers-color-scheme: dark) {
+  .CommiteeSuggestions-component {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: #e9ecef;
+  }
+  
+  .filter-card,
+  .suggestion-table,
+  .pagination-container {
+    background: linear-gradient(135deg, #2d2d2d 0%, #3d3d3d 100%);
+    color: #e9ecef;
+    border-color: #404040;
+  }
+  
+  .suggestion-table td {
+    border-color: #404040;
+    color: #e9ecef;
+  }
+  
+  .form-control,
+  .form-select {
+    background: #2d2d2d;
+    border-color: #404040;
+    color: #e9ecef;
+  }
+  
+  .form-control:focus,
+  .form-select:focus {
+    background: #2d2d2d;
+    color: #e9ecef;
+  }
+}
+*/
+
+/* Print Styles */
+@media print {
+  .filter-card,
+  .pagination-container,
+  .add-button-container,
+  .alert {
+    display: none;
+  }
+  
+  .suggestion-table {
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+  
+  .CommiteeSuggestions-component {
+    background: white;
+    padding: 0;
+  }
+}

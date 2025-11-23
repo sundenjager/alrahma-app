@@ -1,0 +1,323 @@
+/* Main Container Styles */
+.aid-management-container {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styles */
+.aid-header {
+  color: #28502d !important;
+  font-weight: 700 !important;
+  margin-bottom: 25px !important;
+  text-align: center !important;
+  padding-bottom: 15px !important;
+  border-bottom: 2px solid #e0e0e0 !important;
+}
+
+/* Tabs Container */
+.aid-tabs-container {
+  background-color: white !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08) !important;
+  padding: 20px !important;
+  margin-bottom: 30px !important;
+}
+
+/* Tab Navigation */
+/* Custom styling for aid tabs navigation */
+.aid-tabs.custom-nav-tabs {
+  margin-bottom: 20px !important;
+}
+
+/* Navigation container */
+.aid-tabs.custom-nav-tabs .nav-tabs {
+  border-bottom: 2px solid #e9ecef !important;
+  background-color: #28502d !important;
+  border-radius: 8px 8px 0 0 !important;
+  padding: 5px 5px 0 5px !important;
+}
+
+/* Individual nav items */
+.aid-tabs.custom-nav-tabs .nav-link {
+  background-color: transparent !important;
+  color: #6c757d !important;
+  border: none !important;
+  border-radius: 6px 6px 0 0 !important;
+  margin-right: 3px !important;
+  padding: 12px 20px !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+
+  /* RTL support for Arabic text */
+  direction: rtl;
+  text-align: center;
+}
+
+  /* Hover state */
+  .aid-tabs.custom-nav-tabs .nav-link:hover {
+    background-color: rgba(0, 123, 255, 0.1) !important;
+    color: #28502d !important;
+    transform: translateY(-2px) !important;
+  }
+
+  /* Active state */
+  .aid-tabs.custom-nav-tabs .nav-link.active {
+    background-color: #28502d !important;
+    color: white !important;
+    border: none !important;
+    box-shadow: 0 4px 8px rgba(40, 80, 45, 0.3) !important;
+  }
+
+  /* Active state bottom border */
+  .aid-tabs.custom-nav-tabs .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #28502d;
+  }
+
+  /* Tab content area */
+  .aid-tabs.custom-nav-tabs .tab-content {
+    background-color: #28502d;
+    border: 1px solid #e9ecef;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    padding: 20px;
+    min-height: 400px;
+  }
+
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .aid-tabs.custom-nav-tabs .nav-link {
+      padding: 10px 15px;
+      font-size: 13px;
+      margin-right: 2px;
+    }
+    
+    .aid-tabs.custom-nav-tabs .tab-content {
+      padding: 15px;
+    }
+  }
+
+  /* Focus states for accessibility */
+  .aid-tabs.custom-nav-tabs .nav-link:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+  }
+
+  /* Animation for tab switching */
+  .aid-tabs.custom-nav-tabs .tab-pane {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
+
+/* Tab Content */
+.tab-content {
+  background-color: white !important;
+  padding: 25px !important;
+  border-radius: 0 0 8px 8px !important;
+  border: 1px solid #e0e0e0 !important;
+  border-top: none !important;
+}
+
+/* Active Tab Indicator */
+.nav-link.active::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -2px !important;
+  right: 0 !important;
+  left: 0 !important;
+  height: 3px !important;
+  background-color: #28502d !important;
+}
+
+/* Buttons */
+.aid-btn-primary {
+  background-color: #28502d !important;
+  color: white !important;
+  border: none !important;
+  padding: 10px 20px !important;
+  border-radius: 4px !important;
+  font-weight: 600 !important;
+  transition: all 0.3s !important;
+}
+
+.aid-btn-primary:hover {
+  background-color: #1565c0 !important;
+  transform: translateY(-1px) !important;
+}
+
+.aid-btn-danger {
+  background-color: #d32f2f !important;
+  color: white !important;
+}
+
+.aid-btn-danger:hover {
+  background-color: #b71c1c !important;
+}
+
+/* Tables */
+.aid-table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+}
+
+.aid-table th {
+  background-color: #f5f7fa !important;
+  color: #28502d !important;
+  font-weight: 700 !important;
+  padding: 12px 15px !important;
+  text-align: right !important;
+}
+
+.aid-table td {
+  padding: 12px 15px !important;
+  border-bottom: 1px solid #e0e0e0 !important;
+  text-align: right !important;
+}
+
+.aid-table tr:hover {
+  background-color: #f9f9f9 !important;
+}
+
+/* Forms */
+.aid-form-group {
+  margin-bottom: 20px !important;
+}
+
+.aid-form-label {
+  display: block !important;
+  margin-bottom: 8px !important;
+  font-weight: 600 !important;
+  color: #28502d !important;
+}
+
+.aid-form-control {
+  width: 100% !important;
+  padding: 10px 15px !important;
+  border: 1px solid #ddd !important;
+  border-radius: 4px !important;
+  font-size: 16px !important;
+}
+
+/* Cards */
+.aid-card {
+  border: none !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08) !important;
+  margin-bottom: 20px !important;
+}
+
+.aid-card-header {
+  background-color: #f8f9fa !important;
+  border-bottom: 1px solid #e0e0e0 !important;
+  font-weight: 700 !important;
+  padding: 15px 20px !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-tabs {
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    padding-bottom: 5px !important;
+  }
+  
+  .nav-link {
+    padding: 10px 15px !important;
+    font-size: 14px !important;
+    white-space: nowrap !important;
+  }
+  
+  .aid-table {
+    display: block !important;
+    overflow-x: auto !important;
+  }
+}
+
+/* Loading Spinner */
+.aid-loading-spinner {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  height: 200px !important;
+}
+
+/* Error Message */
+.aid-error-alert {
+  background-color: #ffebee !important;
+  color: #c62828 !important;
+  padding: 15px !important;
+  border-radius: 4px !important;
+  margin-bottom: 20px !important;
+  border-left: 4px solid #c62828 !important;
+}
+
+/* Animation Effects */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tab-pane {
+  animation: fadeIn 0.3s ease-out !important;
+}
+
+/* Utility Classes */
+.text-right {
+  text-align: right !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.mb-20 {
+  margin-bottom: 20px !important;
+}
+
+.mt-20 {
+  margin-top: 20px !important;
+}
+
+/* Badges */
+.aid-badge {
+  padding: 5px 10px !important;
+  border-radius: 20px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+}
+
+.badge-success {
+  background-color: #e8f5e9 !important;
+  color: #2e7d32 !important;
+}
+
+.badge-danger {
+  background-color: #ffebee !important;
+  color: #c62828 !important;
+}
+
+.badge-info {
+  background-color: #e3f2fd !important;
+  color: #1565c0 !important;
+}

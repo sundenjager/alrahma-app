@@ -1,0 +1,46 @@
+.equipment-form .modal-content {
+  border: none;
+  border-radius: 10px;
+}
+
+.equipment-form .modal-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+  border-radius: 10px 10px 0 0 !important;
+}
+
+.equipment-form .modal-title {
+  font-weight: 600;
+}
+
+.equipment-form .form-label {
+  font-weight: 500;
+  color: #495057;
+}
+
+.equipment-form .react-datepicker-wrapper {
+  width: 100%;
+}
+
+.equipment-form .invalid-feedback {
+  display: block;
+}
+
+.equipment-form .form-control.is-invalid, 
+.equipment-form .form-select.is-invalid {
+  border-color: #dc3545;
+}
+
+.equipment-form .modal-footer {
+  border-top: 1px solid #e9ecef;
+}
+
+@media (max-width: 768px) {
+  .equipment-form .modal-dialog {
+    margin: 10px;
+  }
+  
+  .equipment-form .row > [class^="col-"] {
+    margin-bottom: 15px;
+  }
+}

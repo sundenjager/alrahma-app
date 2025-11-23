@@ -1,0 +1,229 @@
+/* Deliberations Enhanced Filter Styles */
+.deliberation-filter-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 24px;
+  transition: all 0.3s ease;
+}
+
+.deliberation-filter-card:hover {
+  box-shadow: 0 12px 40px rgba(40, 80, 45, 0.15);
+  transform: translateY(-2px);
+}
+
+.deliberation-filter-card .card-body {
+  padding: 24px;
+}
+
+.deliberation-search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #28502d;
+  z-index: 5;
+  font-size: 1.1rem;
+}
+
+.deliberation-filter-toggle,
+.deliberation-clear-filters {
+  border-radius: 10px;
+  font-weight: 600;
+  padding: 10px 16px;
+  transition: all 0.3s ease;
+}
+
+.deliberation-filter-toggle:hover {
+  background: linear-gradient(135deg, #28502d 0%, #3a7a40 100%);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.deliberation-advanced-filters {
+  border-top: 2px solid #f1f3f4;
+  padding-top: 20px;
+  animation: deliberationSlideDown 0.4s ease-out;
+}
+
+@keyframes deliberationSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.deliberation-filter-label {
+  color: #2c3e50;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.deliberation-filter-date {
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  height: 50px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #ffffff 0%, #fafbfc 100%);
+}
+
+.deliberation-filter-date:focus {
+  border-color: #28502d;
+  box-shadow: 0 0 0 0.2rem rgba(40, 80, 45, 0.25);
+  background-color: #fff;
+}
+
+.deliberation-active-filters {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+}
+
+.deliberation-filter-badge {
+  font-size: 0.85rem;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+}
+
+.deliberation-filter-badge:hover {
+  transform: scale(1.05);
+}
+
+.deliberation-results-summary {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: 1px solid #e9ecef;
+  font-weight: 500;
+}
+
+.deliberation-refresh-btn {
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.deliberation-refresh-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #28502d 0%, #3a7a40 100%);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.deliberation-empty-state {
+  background: white;
+  border-radius: 16px;
+  padding: 60px 40px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e9ecef;
+}
+
+.deliberation-pagination-container {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.deliberation-pagination-info {
+  background: rgba(40, 80, 45, 0.1);
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: #28502d;
+  font-weight: 500;
+}
+
+.deliberation-pagination .page-item .page-link {
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  margin: 0 4px;
+  color: #28502d;
+  font-weight: 600;
+  padding: 10px 16px;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.deliberation-pagination .page-item .page-link:hover {
+  background: linear-gradient(135deg, #28502d 0%, #3a7a40 100%);
+  color: white;
+  border-color: #28502d;
+  transform: translateY(-2px);
+}
+
+.deliberation-pagination .page-item.active .page-link {
+  background: linear-gradient(135deg, #28502d 0%, #3a7a40 100%);
+  border-color: #28502d;
+  color: white;
+  box-shadow: 0 4px 12px rgba(40, 80, 45, 0.4);
+}
+
+/* Loading animation for refresh button */
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .deliberation-filter-card .card-body {
+    padding: 16px;
+  }
+  
+  .deliberation-results-summary {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+  
+  .deliberation-refresh-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+  
+  .deliberation-pagination-container {
+    padding: 16px;
+  }
+  
+  .deliberation-pagination .page-item .page-link {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .deliberation-filter-card .card-body {
+    padding: 12px;
+  }
+  
+  .deliberation-empty-state {
+    padding: 40px 20px;
+  }
+  
+  .deliberation-pagination {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .deliberation-pagination .page-item {
+    margin-bottom: 4px;
+  }
+}
