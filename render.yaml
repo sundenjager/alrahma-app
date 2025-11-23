@@ -4,10 +4,9 @@ databases:
     databaseName: alrahmadb
 
 services:
-  # .NET Backend API - FIXED RUNTIME
+  # .NET Backend API - REMOVE RUNTIME FIELD
   - type: web
     name: alrahma-backend
-    runtime: dotnet
     plan: free
     region: oregon
     branch: main
@@ -27,7 +26,7 @@ services:
           property: connectionString
     healthCheckPath: /health
 
-  # React Frontend - FIXED STATIC SITE CONFIG
+  # React Frontend
   - type: web
     name: alrahma-frontend
     env: static
