@@ -27,8 +27,8 @@ services:
           property: connectionString
     healthCheckPath: /health
 
-  # React Frontend
-  - type: static
+  # React Frontend - FIXED TYPE
+  - type: static_site
     name: alrahma-frontend
     plan: free
     region: oregon
