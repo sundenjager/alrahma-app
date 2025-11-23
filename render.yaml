@@ -1,32 +1,17 @@
 databases:
   - name: alrahma-database
     plan: free
-    databaseName: alrahmadb
 
 services:
   - type: web
     name: alrahma-backend
     plan: free
-    branch: main
-    rootDir: AlRahmaBackend
     buildCommand: dotnet publish -c Release -o output
     startCommand: dotnet output/AlRahmaBackend.dll
-    envVars:
-      - key: ASPNETCORE_ENVIRONMENT
-        value: Production
-      - key: ConnectionStrings__DefaultConnection
-        fromDatabase:
-          name: alrahma-database
-          property: connectionString
 
   - type: web
     name: alrahma-frontend
     env: static
     plan: free
-    branch: main
-    rootDir: Al-Rahma-front
-    buildCommand: npm install && npm run build
+    buildCommand: npm run build
     staticPublishPath: dist
-    envVars:
-      - key: VITE_API_BASE_URL
-        value: https://alrahma-backend.onrender.com
