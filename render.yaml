@@ -4,7 +4,7 @@ databases:
     databaseName: alrahmadb
 
 services:
-  # .NET Backend API
+  # .NET Backend API - Web Service
   - type: web
     name: alrahma-backend
     env: dotnet
@@ -27,9 +27,10 @@ services:
           property: connectionString
     healthCheckPath: /health
 
-  # React Frontend - FIXED TYPE
-  - type: static_site
+  # React Frontend - Static Site (CORRECT TYPE)
+  - type: web
     name: alrahma-frontend
+    env: static
     plan: free
     region: oregon
     branch: main
@@ -37,7 +38,7 @@ services:
     buildCommand: |
       npm install
       npm run build
-    publishDirectory: dist
+    staticPublishPath: dist
     envVars:
       - key: VITE_API_BASE_URL
         fromService:
