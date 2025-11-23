@@ -4,9 +4,10 @@ databases:
     databaseName: alrahmadb
 
 services:
-  # .NET Backend API - REMOVE RUNTIME FIELD
+  # .NET Backend API
   - type: web
     name: alrahma-backend
+    runtime: docker  # Add this line
     plan: free
     region: oregon
     branch: main
@@ -29,7 +30,7 @@ services:
   # React Frontend
   - type: web
     name: alrahma-frontend
-    env: static
+    runtime: static  # Add this line for clarity
     plan: free
     branch: main
     rootDir: Al-Rahma-front
