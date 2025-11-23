@@ -4,15 +4,17 @@ databases:
     databaseName: alrahmadb
 
 services:
-  # .NET Backend API
+  # .NET Backend API - REMOVE RUNTIME FIELD
   - type: web
     name: alrahma-backend
-    runtime: docker
     plan: free
     region: oregon
     branch: main
     rootDir: AlRahmaBackend
-    dockerfilePath: ./Dockerfile
+    buildCommand: |
+      dotnet restore
+      dotnet publish -c Release -o output
+    startCommand: dotnet output/AlRahmaBackend.dll
     envVars:
       - key: ASPNETCORE_ENVIRONMENT
         value: Production
@@ -27,7 +29,7 @@ services:
   # React Frontend
   - type: web
     name: alrahma-frontend
-    runtime: static
+    env: static
     plan: free
     branch: main
     rootDir: Al-Rahma-front
