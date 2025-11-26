@@ -83,25 +83,28 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
 .AddDefaultTokenProviders();
 
 // Configure CORS with enhanced security - MUST BE BEFORE AUTHENTICATION
-options.AddPolicy("RailwayPolicy", policy =>
+builder.Services.AddCors(options =>
 {
-    if (builder.Environment.IsDevelopment())
+    options.AddPolicy("RailwayPolicy", policy =>
     {
-        policy.WithOrigins("http://localhost:5173", "http://localhost:5273")
-              .AllowAnyMethod()
-              .AllowAnyHeader()
-              .AllowCredentials();
-    }
-    else
-    {
-        policy.WithOrigins(
-                "https://alrahma-frontend.onrender.com",
-                "https://your-project.up.railway.app"  // Add your Railway URL
-              )
-              .AllowAnyMethod()
-              .AllowAnyHeader()
-              .AllowCredentials();
-    }
+        if (builder.Environment.IsDevelopment())
+        {
+            policy.WithOrigins("http://localhost:5173", "http://localhost:5273")
+                  .AllowAnyMethod()
+                  .AllowAnyHeader()
+                  .AllowCredentials();
+        }
+        else
+        {
+            policy.WithOrigins(
+                    "https://alrahma-frontend.onrender.com",
+                    "https://your-frontend-app.onrender.com"  // Update with your actual frontend URL
+                  )
+                  .AllowAnyMethod()
+                  .AllowAnyHeader()
+                  .AllowCredentials();
+        }
+    });
 });
 
 
