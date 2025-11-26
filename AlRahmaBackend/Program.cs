@@ -27,7 +27,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
 // Database Context
-// Database Context - UPDATED FOR POSTGRESQL
 builder.Services.AddDbContext<ApplicationDbContext>((serviceProvider, options) =>
 {
     var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -97,10 +96,7 @@ builder.Services.AddCors(options =>
         }
         else
         {
-            policy.WithOrigins(
-                    "https://alrahma-frontend.onrender.com",
-                    "https://alrahma-backend.onrender.com"
-                  )
+            policy.WithOrigins("https://alrahma-frontend.onrender.com")
                   .AllowAnyMethod()
                   .AllowAnyHeader()
                   .AllowCredentials();
