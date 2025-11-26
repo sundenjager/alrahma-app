@@ -1,9 +1,0 @@
-[build]
-builder = "NIXPACKS"
-
-[deploy]
-startCommand = "dotnet AlRahmaBackend.dll --urls http://*:$PORT"
-restartPolicyType = "ON_FAILURE"
-
-[env]
-ASPNETCORE_ENVIRONMENT = "Production"
